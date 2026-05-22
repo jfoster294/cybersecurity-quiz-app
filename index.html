@@ -1,1 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Cybersecurity Quiz App | Joel Foster</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <nav class="top-nav">
+        <a href="https://jfoster294.github.io/portfolio-site/" class="back-link">← Portfolio</a>
+        <p>Cybersecurity Quiz App</p>
+      </nav>
+
+      <section class="hero-content">
+        <p class="eyebrow">Cybersecurity Quiz</p>
+        <h1>Test your security knowledge.</h1>
+        <p>
+          Answer cybersecurity questions, track your score, review results,
+          and save your best score locally.
+        </p>
+      </section>
+    </header>
+
+    <section class="stats-grid">
+      <article class="stat-card">
+        <p>Best Score</p>
+        <h2 id="bestScore">0%</h2>
+      </article>
+
+      <article class="stat-card">
+        <p>Current Score</p>
+        <h2 id="currentScore">0</h2>
+      </article>
+
+      <article class="stat-card">
+        <p>Question</p>
+        <h2 id="questionProgress">1/10</h2>
+      </article>
+    </section>
+
+    <section class="quiz-layout">
+      <aside class="settings-card">
+        <h2>Quiz Settings</h2>
+
+        <label for="categorySelect">Category</label>
+        <select id="categorySelect">
+          <option value="All">All Categories</option>
+          <option value="Phishing">Phishing</option>
+          <option value="Passwords">Passwords</option>
+          <option value="Malware">Malware</option>
+          <option value="Networking">Networking</option>
+        </select>
+
+        <button id="startButton" class="primary-button" type="button">Start Quiz</button>
+        <button id="restartButton" class="secondary-button" type="button">Restart Quiz</button>
+
+        <div class="rules-box">
+          <h3>How It Works</h3>
+          <ul>
+            <li>Choose a category or all questions.</li>
+            <li>Select one answer per question.</li>
+            <li>Review correct and incorrect answers at the end.</li>
+            <li>Your best score saves locally.</li>
+          </ul>
+        </div>
+      </aside>
+
+      <section class="quiz-card">
+        <div id="startScreen" class="start-screen">
+          <h2>Ready to begin?</h2>
+          <p>
+            Pick a category and press start. This quiz is built to practice
+            front-end quiz logic, scoring, filtering, and local storage.
+          </p>
+        </div>
+
+        <div id="questionScreen" class="question-screen hidden">
+          <div class="progress-bar">
+            <div id="progressFill" class="progress-fill"></div>
+          </div>
+
+          <p id="questionCategory" class="question-category">Category</p>
+
+          <h2 id="questionText">Question text</h2>
+
+          <div id="answerButtons" class="answer-buttons"></div>
+
+          <p id="feedbackMessage" class="feedback-message"></p>
+
+          <button id="nextButton" class="primary-button hidden" type="button">Next Question</button>
+        </div>
+
+        <div id="resultScreen" class="result-screen hidden">
+          <h2>Quiz Complete</h2>
+
+          <div class="result-score">
+            <span id="finalScorePercent">0%</span>
+            <p id="finalScoreText">You scored 0 out of 0.</p>
+          </div>
+
+          <p id="resultMessage" class="result-message"></p>
+
+          <button id="reviewButton" class="secondary-button" type="button">Review Answers</button>
+          <button id="tryAgainButton" class="primary-button" type="button">Try Again</button>
+        </div>
+      </section>
+    </section>
+
+    <section id="reviewSection" class="review-section hidden">
+      <div class="section-heading">
+        <h2>Answer Review</h2>
+        <p>Compare your answer with the correct answer.</p>
+      </div>
+
+      <div id="reviewList" class="review-list"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
